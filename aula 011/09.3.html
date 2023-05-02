@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pais.css">
+    <title>nacionalidades</title>
+</head>
+<body>
+    <div id="conteiner">
+        <h1>Qual o seu pais?</h1>
+        Digite seu pais de origem: <input type="text" name="txtnac" id="txtnac">
+        <input type="button" value="verificar" onclick="pesquisar()">
+        <div id="res"></div>
+    </div>
+
+    <script>
+        function pesquisar(){
+            var txtn = document.querySelector('input#txtnac')
+            var res = document.querySelector('div#res')
+            var nac = txtn.value 
+
+            res.innerHTML = `<p>Seu país de origem é <strong> ${nac}<strong></p>`
+
+            if (nac == 'BRASIL' || nac == 'brasil'){
+                res.innerHTML += `<p> Então Você é Brasileiro!</p>`
+            } else {
+                res.innerHTML += `<p>Então Você é Estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
